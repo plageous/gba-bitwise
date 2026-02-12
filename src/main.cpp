@@ -1,20 +1,15 @@
 #include <bn_core.h>
-#include <bn_backdrop.h>
-#include <bn_color.h>
-#include <bn_keypad.h>
+#include <bn_log.h>
+#include <bn_string.h>
+
+#include "base_conv.h"
 
 int main() {
     bn::core::init();
 
-    bn::backdrop::set_color(bn::color(31, 0, 0));
+    BN_LOG("Hey!");
 
     while(true) {
-        if(bn::keypad::a_pressed()) {
-            bn::backdrop::set_color(bn::color(0, 0, 30));
-        }
-        if(bn::keypad::b_pressed()) {
-            bn::backdrop::set_color(bn::color(0, 31, 0));
-        }
         bn::core::update();
     }
 }
